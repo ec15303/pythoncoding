@@ -25,8 +25,8 @@ nostopword = []
 for w in text:
     if not w in stopword and w.isalpha():
         nostopword.append(w)
-Counter(nostopword).most_common(100)  # count the top 100 occurrence words.
-
+print Counter(nostopword).most_common(100)  # count the top 100 occurrence words.
+print
 
 # make font color in word cloud gray
 def grey_color(word, font_size, position, orientation, random_state=None, **kwargs):
