@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import WordCloud
 import random
 from collections import Counter
 from nltk.corpus import stopwords
@@ -25,8 +25,8 @@ nostopword = []
 for w in text:
     if not w in stopword and w.isalpha():
         nostopword.append(w)
-print Counter(nostopword).most_common(100)  # count the top 100 occurrence words.
-print
+print Counter(nostopword).most_common(100)   # count the top 100 occurrence words.
+
 
 # make font color in word cloud gray
 def grey_color(word, font_size, position, orientation, random_state=None, **kwargs):
@@ -36,11 +36,10 @@ def grey_color(word, font_size, position, orientation, random_state=None, **kwar
 print "please wait for few seconds..."
 
 wordcloud = WordCloud(background_color='black',
-                      stopwords=STOPWORDS,
                       max_words=100,
                       width=1800,
                       height=1400,
-                      font_path='~/Amsdam Regular.ttf').generate(str(nostopword))
+                      font_path='amsdam-regular.ttf').generate(str(nostopword))
 
 # Open a plot of the generated image.
 plt.imshow(wordcloud.recolor(color_func=grey_color, random_state=3))

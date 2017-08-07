@@ -1,0 +1,4 @@
+Pillow
+wordcloud
+nltk
+bs4
